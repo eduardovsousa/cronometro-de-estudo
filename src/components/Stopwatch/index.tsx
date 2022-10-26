@@ -1,6 +1,6 @@
-import style from './style.module.scss'
-import ButtonForm from '../ButtonForm'
-import Clock from './Clock'
+import style from "./style.module.scss";
+import ButtonForm from "../ButtonForm";
+import Clock from "./Clock";
 
 export default function Stopwatch() {
   return (
@@ -9,9 +9,7 @@ export default function Stopwatch() {
       <div className={style.stopwatchWrapper}>
         <Clock />
       </div>
-      <ButtonForm text='Start!'/>
+      <ButtonForm text="Start!" />
     </div>
-
-
-  )
+  );
 }

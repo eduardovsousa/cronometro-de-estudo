@@ -1,4 +1,4 @@
-import style from './style.module.scss'
+import style from "./style.module.scss";
 
 export default function Clock() {
   return (
@@ -9,5 +9,5 @@ export default function Clock() {
       <span className={style.clockNumber}>0</span>
       <span className={style.clockNumber}>0</span>
     </>
-  )
+  );
 }
