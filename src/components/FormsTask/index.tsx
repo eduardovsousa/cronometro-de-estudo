@@ -3,9 +3,18 @@ import ButtonForm from '../ButtonForm';
 import style from './style.module.scss'
 
 class FormsTask extends React.Component {
+  state = {
+    task: "",
+    time: "00:00"
+  }
+
+  addTask(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+  }
+
   render() {
     return (
-      <form className={style.newTask}>
+      <form className={style.newTask} onSubmit={ this.addTask.bind(this) }>
         <div className={style.inputContainer}>
           <label htmlFor="task">
             Add a new Task!
@@ -13,6 +22,8 @@ class FormsTask extends React.Component {
           <input 
             type="text"
             name="task"
+            value={this.state.task}
+            onChange={ event => this.setState({...this.state, task: event.target.value })}
             id="task"
             placeholder="What are you going to study?"
             required
@@ -27,6 +38,8 @@ class FormsTask extends React.Component {
             type="time"
             step="1"
             name="time"
+            value={this.state.time}
+            onChange={event => this.setState({...this.state, time: event.target.value })}
             id="time"
             min="00:00:00"
             max="01:30"

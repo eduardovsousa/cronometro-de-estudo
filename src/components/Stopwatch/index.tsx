@@ -5,7 +5,7 @@ import Clock from './Clock'
 export default function Stopwatch() {
   return (
     <div className={style.stopwatch}>
-      <p className={style.title}>Escolha um card e inicie o cronômetro</p>
+      <p className={style.title}>Choose a card and start the timer</p>
       <div className={style.stopwatchWrapper}>
         <Clock />
       </div>
