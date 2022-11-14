@@ -23,7 +23,7 @@ function App() {
     if(selected) {
       setSelected(undefined)
       setTasks(oldTasks => oldTasks.map(task => {
-        if(task.id == selected.id) {
+        if(task.id === selected.id) {
           return {
             ...task,
             selected: false,

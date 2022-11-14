@@ -1,19 +1,18 @@
-import React from "react";
 import style from "./style.module.scss";
 
-class ButtonForm extends React.Component<{
+
+interface Props {
   text: string;
   type?: "button" | "submit" | "reset" | undefined;
   onClick?: () => void
-}> {
-  render() {
-    const { type = "button", onClick } = this.props;
-    return (
-      <button onClick={onClick} type={type} className={style.buttonStyle}>
-        {this.props.text}
-      </button>
-    );
-  }
+}
+
+function ButtonForm({onClick, type, text }: Props) {
+  return (
+    <button onClick={onClick} type={type} className={style.buttonStyle}>
+      {text}
+    </button>
+  );
 }
 
 export default ButtonForm;
