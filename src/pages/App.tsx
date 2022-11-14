@@ -19,11 +19,30 @@ function App() {
     );
   }
 
+  function endTask() {
+    if(selected) {
+      setSelected(undefined)
+      setTasks(oldTasks => oldTasks.map(task => {
+        if(task.id == selected.id) {
+          return {
+            ...task,
+            selected: false,
+            complete: true
+          }
+        }
+        return task;
+      }))
+    }
+  }
+
   return (
     <div className={style.AppStyle}>
       <FormsTask setTasks={setTasks} />
       <List tasks={tasks} selectedTask={handlerTask} />
-      <Stopwatch selected={selected}/>
+      <Stopwatch 
+        selected={selected}
+        endTask={endTask}
+        />
     </div>
   );
 }

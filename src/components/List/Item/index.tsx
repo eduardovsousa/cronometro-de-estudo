@@ -16,9 +16,9 @@ export default function Item({
 
   return (
     <li
-      className={`${style.item} ${selected ? style.itemSelected : ''}`}
+      className={`${style.item} ${selected ? style.itemSelected : ''} ${complete ? style.itemComplete : ''}`}
       onClick={() =>
-        selectedTask({
+        !complete && selectedTask({
           task,
           time,
           selected,
@@ -29,6 +29,7 @@ export default function Item({
     >
       <h3>{task}</h3>
       <span>{time}</span>
+      {complete && <span className={style.concluded} aria-label="task complete"></span>}
     </li>
   );
 }
